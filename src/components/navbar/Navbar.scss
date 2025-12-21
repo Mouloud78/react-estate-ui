@@ -1,4 +1,4 @@
-@import "../../responsive.scss";
+@use "../../responsive.scss";
 nav {
   height: 100px;
   display: flex;
@@ -8,7 +8,7 @@ nav {
   a {
     transition: all 0.4s ease;
 
-    @include sm {
+    @include responsive.sm {
       display: none;
     }
 
@@ -35,11 +35,11 @@ nav {
       }
 
       span {
-        @include md {
+        @include responsive.md {
           display: none;
         }
 
-        @include sm {
+        @include responsive.sm {
           display: initial;
         }
       }
@@ -54,12 +54,57 @@ nav {
     background-color: #a6b3c683;
     height: 100%;
 
+    @include responsive.md {
+      background-color: transparent;
+    }
+
     a {
       padding: 12px 24px;
       margin: 20px;
     }
     .register {
       background-color: #3fb4ee;
+    }
+
+    .menuIcon {
+      display: none;
+      z-index: 10;
+
+      img {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+      }
+
+      @include responsive.sm {
+        display: initial;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      background-color: black;
+      color: white;
+      top: 0;
+      right: -50%;
+      height: 100vh;
+      width: 50%;
+      transition: all 1s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+
+      &.active {
+        right: 0;
+      }
+
+      @include responsive.sm {
+        a {
+          display: initial;
+        }
+      }
     }
   }
 }

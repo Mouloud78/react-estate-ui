@@ -1,21 +1,23 @@
-@import "./responsive.scss";
+@use "./responsive.scss";
 .layout {
-  // background-color: rebeccapurple;
   height: 100vh;
   max-width: 1366px;
   margin-inline: auto;
   padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
 
-  @include lg {
-    // background-color: coral;
+  @include responsive.lg {
     max-width: 1280px;
   }
-  @include md {
-    // background-color: cornflowerblue;
+  @include responsive.md {
     max-width: 768px;
   }
-  @include sm {
-    // background-color: red;
+  @include responsive.sm {
     max-width: 640px;
+  }
+
+  .content {
+    flex: 1;
   }
 }

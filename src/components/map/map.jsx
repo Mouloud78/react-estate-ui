@@ -8,10 +8,10 @@ function Map({ items }) {
   const [position, setPosition] = useState(null);
 
   useEffect(() => {
-    // if (!navigator.geolocation) {
-    //   console.log("Géolocalisation non supportée");
-    //   return;
-    // }
+    if (!navigator.geolocation) {
+      console.log("Géolocalisation non supportée");
+      return;
+    }
 
     navigator.geolocation.getCurrentPosition(
       (pos) => {
@@ -29,7 +29,7 @@ function Map({ items }) {
     <MapContainer
       center={position}
       zoom={11}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
       className="map"
     >
       <TileLayer

@@ -20,3 +20,5 @@ function Pin({ item }) {
 }
 
 export default Pin;
+
+//1:48

@@ -1,11 +1,26 @@
+@use "../../responsive.scss";
+
 .singlePage {
   display: flex;
   height: 100%;
+
+  @include responsive.md {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
 
   .details {
     flex: 3;
     height: 100%;
     overflow-y: scroll;
+
+    @include responsive.md {
+      flex: none;
+      height: max-content;
+      overflow-y: hidden;
+      margin-bottom: 50px;
+    }
+
     .wrapper {
       padding-right: 50px;
 
@@ -74,6 +89,13 @@
     height: 100%;
     overflow-y: scroll;
 
+    @include responsive.md {
+      flex: none;
+      height: max-content;
+      overflow-y: hidden;
+      margin-bottom: 50px;
+    }
+
     .wrapper {
       padding: 0px 20px;
       display: flex;
@@ -129,6 +151,10 @@
       .sizes {
         display: flex;
         justify-content: space-between;
+
+        @include responsive.lg {
+          font-size: 12px;
+        }
 
         .size {
           display: flex;
